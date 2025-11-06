@@ -60,17 +60,20 @@ const Carousel = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4 py-20 my-[10%] gap-12"
+      className="w-full max-w-[1100px] mx-auto z-10 flex flex-col items-center px-4 py-20 my-[10%] gap-12"
     >
       {/* Title */}
       <h2
-        className="font-tussilago text-2xl md:text-4xl text-white text-center pb-10 transition-all duration-700 ease-out"
+        className="font-tussilago font-bold text-2xl md:text-4xl text-center mb-10 transition-all duration-700 ease-out "
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? "translateY(0)" : "translateY(-20px)",
         }}
       >
-        MISSION 2030 : 1 MILLION USERS
+        <span className="gradient-vertical">MISSION</span>{" "}
+        <span className="gradient-vertical">2030</span>{" "}
+        <span className="gradient-vertical whitespace-nowrap">: 1 MILLION</span>{" "}
+        <span className="gradient-vertical">USERS</span>
       </h2>
 
       {/* Content container */}
@@ -84,7 +87,7 @@ const Carousel = () => {
             transitionDelay: "200ms",
           }}
         >
-          <p className="font-morigothic font-light text-lg md:text-xl text-white ">
+          <p className="font-morigothic text-lg md:text-xl text-white font-medium ">
             a connected network powered by the OS <br />
             creating a flywheel of data, behavior, and culture.
           </p>
@@ -95,22 +98,20 @@ const Carousel = () => {
           </p>
 
           <div className=" flex flex-col gap-4 max-w-[450px] mt-10 ">
-            <div className=" w-full h-px bg-white/50" />
-
-            <p className=" font-aoi text-xs">
+            <p className=" font-aoi text-xs uppercase">
               Preventive-health market in India → 4× by 2030
             </p>
-            <div className=" w-full h-px bg-white/50" />
-            <p className=" font-aoi text-xs">
+            <div className=" w-full h-px bg-white/20" />
+            <p className=" font-aoi text-xs uppercase">
               Cultural shift → Illness → Performance
             </p>
-            <div className=" w-full h-px bg-white/50" />
-            <p className=" font-aoi text-xs">
+            <div className=" w-full h-px bg-white/20" />
+            <p className=" font-aoi text-xs uppercase">
               India’s health optimization compounding at an average rate of ~35%
               YoY (wearables, supplements, diagnostics)
             </p>
-            <div className=" w-full h-px bg-white/50" />
-            <p className=" font-aoi text-xs">
+            <div className=" w-full h-px bg-white/20" />
+            <p className=" font-aoi text-xs uppercase">
               1.4 billion people → still using Western-built systems for Eastern
               bodies
             </p>

@@ -12,38 +12,32 @@ const Roadmap = () => {
     {
       year: "2025",
       title: "Proof",
-      description:
-        "Building the core infrastructure and initial product development. Assembling the founding team and establishing our vision.",
+      description: "VANTA OS [ALPHA]",
     },
     {
       year: "2026",
       title: "Culture",
-      description:
-        "Release Vanta OS Alpha to early adopters. Gather feedback and iterate on core features. Build initial community.",
+      description: "FIRST100 ENHANCED",
     },
     {
       year: "2027",
       title: "Gravity",
-      description:
-        "Public beta with enhanced features. Expand wearable integrations and biomarker tracking. Scale user acquisition.",
+      description: "EARLY BELIEVERS TO ECOSYSTEM",
     },
     {
       year: "2028",
       title: "Scale",
-      description:
-        "Launch premium features and enterprise solutions. Partner with health providers and expand ecosystem.",
+      description: "EARLY BELIEVERS TO ECOSYSTEM",
     },
     {
       year: "2029",
-      title: "Infra",
-      description:
-        "Building robust infrastructure to support massive scale and new product verticals.",
+      title: "Infra 1.0",
+      description: "",
     },
     {
       year: "2030",
-      title: "Infra 2",
-      description:
-        "Reach our mission of empowering 1 million users. Establish Vanta as the leading health optimization platform.",
+      title: "Infra 2.0",
+      description: "",
     },
   ];
 
@@ -83,7 +77,7 @@ const Roadmap = () => {
           {/* Milestones */}
           <div className="relative flex justify-between items-center min-h-[120px] ">
             {/* Horizontal line (positioned between first and last dot) */}
-            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white/20 -translate-y-1/2">
+            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white/20 -translate-y-1/2 -mt-[2px]">
               {/* Animated line fill */}
               <div
                 className="h-full bg-white/60 transition-all duration-1500 ease-out"
@@ -118,7 +112,7 @@ const Roadmap = () => {
                   }}
                 >
                   <p
-                    className={`font-tussilago uppercase font-medium text-center whitespace-nowrap transition-all duration-300 ${
+                    className={`font-tussilago font-bold uppercase text-center whitespace-nowrap transition-all duration-300 ${
                       selectedIndex === index
                         ? "text-lg md:text-xl text-white"
                         : "text-sm md:text-base text-white/80"
@@ -140,13 +134,13 @@ const Roadmap = () => {
                   <div
                     className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
                       selectedIndex === index
-                        ? "bg-white border-white scale-125"
+                        ? "bg-primary border-primary scale-125"
                         : "bg-black border-white/60"
                     }`}
                   />
                   {/* Pulse effect on selected */}
                   {selectedIndex === index && (
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-white/40 animate-ping" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-primary animate-ping" />
                   )}
                 </div>
 

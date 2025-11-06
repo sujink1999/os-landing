@@ -111,6 +111,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-border: #3e3e3e;
+  --color-primary: #ff5c2a;
   --font-aoi: var(--font-aoi);
   --font-aoi-compact: var(--font-aoi-compact);
   --font-tussilago: var(--font-tussilago);
@@ -307,4 +308,33 @@ body {
 /* Preserve images and brand colors */
 .calendly-inline-widget iframe img {
   filter: invert(1) hue-rotate(180deg);
+}
+
+/* Gradient text from black to white (bottom to top) */
+.gradient-vertical {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 70%,
+    #3e3e3e 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block;
+}
+
+.primary-gradient-vertical {
+  background: linear-gradient(
+    to bottom,
+    #ff5c2a 0%,
+    #ff5c2a 70%,
+    #000 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block;
 }

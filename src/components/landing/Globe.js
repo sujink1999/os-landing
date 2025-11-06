@@ -147,18 +147,20 @@ const Globe = () => {
           There are more people living inside this circle than outside it. Yet
           the future of health is still being designed elsewhere.
         </p>
-        <p className=" font-morigothic font-light text-base text-white/90 ">
+        <p className=" font-morigothic  text-base font-bold text-white/90 ">
           NOT ONE GLOBAL HEALTH COMPANY IS BUILT AROUND OUR BIOLOGY, BEHAVIOUR
           OR CULTURE
         </p>
       </div>
 
-      <div className=" flex flex-col items-center gap-4 mt-[5%]">
-        <p className=" font-morigothic font-light text-sm md:text-base text-center text-white/70 ">
+      <div className=" flex flex-col items-center gap-4 ">
+        <p className=" font-morigothic font-light text-sm md:text-base text-center text-white/70 mt-[5%] ">
           We’re here to change that. To make high performance living a culture.
         </p>
-        <p className=" font-tussilago text-xl md:text-4xl text-white/90 text-center ">
-          IN PURSUIT OF HIGHER HUMAN POTENTIAL
+        <p className=" font-tussilago font-bold gradient-vertical text-xl md:text-4xl text-center mt-[10%]  ">
+          IN PURSUIT OF{" "}
+          <span className="primary-gradient-vertical">HIGHER </span> HUMAN
+          POTENTIAL
         </p>
       </div>
     </div>

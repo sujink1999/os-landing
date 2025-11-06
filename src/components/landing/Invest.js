@@ -56,7 +56,7 @@ const Invest = () => {
 
       <div className=" flex flex-col">
         <div
-          className=" flex items-center md:justify-start md:flex-row flex-col mt-[10%] gap-8 relative transition-all duration-700 ease-out"
+          className=" flex items-center md:justify-start md:flex-row flex-col mt-[10%] gap-4 relative transition-all duration-700 ease-out"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "scale(1)" : "scale(0.95)",
@@ -67,12 +67,12 @@ const Invest = () => {
             To help us engineer the future of health infrastructure to build
             proof, ignite culture, and scale the ecosystem.
           </p>
-          <p className=" hidden md:block font-morigothic font-light text-lg text-white/60 text-right self-start">
+          <p className=" hidden md:block font-morigothic font-light text-base text-white/60 text-right self-start">
             To help us engineer the future <br />
             of health infrastructure
           </p>
           <div className=" w-[280px] h-[400px] bg-white/10 rounded-2xl" />
-          <p className=" hidden md:block font-morigothic font-light text-lg text-white/60 text-left self-center">
+          <p className=" hidden md:block font-morigothic font-light text-base text-white/60 text-left self-center">
             to build proof, ignite culture,
             <br /> and scale the ecosystem.
           </p>
@@ -85,8 +85,8 @@ const Invest = () => {
             transitionDelay: "400ms",
           }}
         >
-          <p className=" font-tussilago text-2xl md:text-3xl text-white  text-center">
-            WE&apos;RE RAISING $1.5 MILLION
+          <p className=" font-tussilago text-2xl md:text-3xl text-white font-bold text-center gradient-vertical">
+            WE&apos;RE RAISING <span className="font-aoi">$</span>1.5 MILLION
           </p>
           <p className=" font-morigothic font-light text-base text-white/50 text-center">
             from the right strategic investors — builders, believers, and

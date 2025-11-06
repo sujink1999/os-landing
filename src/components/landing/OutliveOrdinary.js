@@ -72,7 +72,7 @@ const OutliveOrdinary = () => {
         }}
       />
 
-      <div className=" w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4  relative  mt-[10%] ">
+      <div className=" w-full max-w-[1000px] mx-auto z-10 flex flex-col items-center px-4  relative  mt-[5%] ">
         <img
           src="/assets/images/vanta-logo.png"
           alt="Vanta"
