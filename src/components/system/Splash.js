@@ -12,6 +12,17 @@ const Splash = () => {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     // Step 1: Show "YOUR HEALTH IS COMPLEX" for 2 seconds
@@ -89,7 +100,10 @@ const Splash = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex items-center gap-3">
+          <form
+            onSubmit={handleSubmit}
+            className="flex items-end flex-col gap-3"
+          >
             <GlowingInput
               type="email"
               placeholder="enter email to proceed"
@@ -127,7 +141,7 @@ const Splash = () => {
             opacity: step < 3 ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",
           }}
-          className="text-4xl font-aoi text-white/90 tracking-wider"
+          className="md:text-4xl text-2xl text-center font-aoi text-white/90 tracking-wider"
         >
           YOUR <span className=" font-tussilago">HEALTH</span> IS COMPLEX
         </h1>
@@ -138,7 +152,9 @@ const Splash = () => {
         <>
           <div
             style={{
-              transform: `scale(calc(90vh / 900px))`,
+              transform: isMobile
+                ? `scale(calc(50vh / 900px))`
+                : `scale(calc(90vh / 900px))`,
               transformOrigin: "center",
             }}
           >
@@ -157,7 +173,7 @@ const Splash = () => {
             style={{
               animationDelay: "500ms",
             }}
-            className="text-3xl font-aoi text-white/90 tracking-wider animate-fade-in duration-2000 opacity-0"
+            className="md:text-3xl text-center md:text-left text-2xl font-aoi text-white/90 tracking-wider animate-fade-in duration-2000 opacity-0"
           >
             YOUR <span className=" font-tussilago">HEALTHCARE</span>{" "}
             DOESN&apos;T HAVE TO BE

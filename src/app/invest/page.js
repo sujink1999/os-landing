@@ -23,7 +23,7 @@ const InvestPage = () => {
     return <GlassLoader />;
   }
 
-  if (!hasRecordedEmail) {
+  if (hasRecordedEmail) {
     return <Splash />;
   }
 
