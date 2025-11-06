@@ -1,15 +1,274 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Aoi Mono";
+  src: url("/assets/fonts/Aoi Mono/Aoi Mono - Standard.woff2") format("woff2"),
+    url("/assets/fonts/Aoi Mono/Aoi Mono - Standard.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aoi Mono Compact";
+  src: url("/assets/fonts/Aoi Mono/Aoi Mono - Compact.otf") format("opentype"),
+    url("/assets/fonts/Aoi Mono/Aoi Mono - Compact.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: "Tussilago";
+  src: url("/assets/fonts/Aoi Mono/TussilagoExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tussilago";
+  src: url("/assets/fonts/Aoi Mono/TussilagoLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: "Tussilago";
+  src: url("/assets/fonts/Aoi Mono/TussilagoRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: "Tussilago";
+  src: url("/assets/fonts/Aoi Mono/TussilagoBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tussilago";
+  src: url("/assets/fonts/Aoi Mono/TussilagoHeavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: "MoriGothic";
+  src: url("/assets/fonts/Aoi Mono/MoriGothic-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MoriGothic";
+  src: url("/assets/fonts/Aoi Mono/MoriGothic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MoriGothic";
+  src: url("/assets/fonts/Aoi Mono/MoriGothic-Normal.ttf") format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MoriGothic";
+  src: url("/assets/fonts/Aoi Mono/MoriGothic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MoriGothic";
+  src: url("/assets/fonts/Aoi Mono/MoriGothic-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-aoi: "Aoi Mono", monospace;
+  --font-aoi-compact: "Aoi Mono Compact", monospace;
+  --font-tussilago: "Tussilago", sans-serif;
+  --font-morigothic: "MoriGothic", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: #2e2e2e;
+  --font-aoi: var(--font-aoi);
+  --font-aoi-compact: var(--font-aoi-compact);
+  --font-tussilago: var(--font-tussilago);
+  --font-morigothic: var(--font-morigothic);
+
+  --animate-border-draw-svg: border-draw-svg 0.4s ease-out forwards;
+  --animate-scale-fade-in: scale-fade-in 0.2s ease-out 0.4s both;
+  --animate-fade-in: fade-in 0.5s ease-out 1s both;
+  --animate-line-expand: line-expand 2s ease-in-out infinite;
+  --animate-line-expand-once: line-expand-once 0.8s ease-out forwards;
+  --animate-glow-rotate: glow-rotate 3s linear infinite;
+  --animate-border-light: border-light 20s ease-in-out infinite;
+}
+
+@keyframes border-draw-svg {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes line-expand {
+  0%,
+  100% {
+    width: var(--target-width);
+  }
+  50% {
+    width: calc(var(--target-width) - 20%);
+  }
+}
+
+@keyframes line-draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-draw-biomarker {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-expand-once {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
+@keyframes sleep-chart-reveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes microbe-float-1 {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+  }
+}
+
+@keyframes microbe-float-2 {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+}
+
+@keyframes microbe-float-3 {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+  }
+}
+
+@keyframes glow-rotate {
+  0% {
+    transform: rotate(0deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+@keyframes border-light {
+  0% {
+    left: 0px;
+    rotate: 7deg;
+  }
+  50% {
+    left: 60px;
+    rotate: 0deg;
+  }
+  100% {
+    left: 0px;
+    rotate: 7deg;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: blur(20px);
+  }
+  50% {
+    filter: blur(40px);
+  }
+}
+
+@keyframes wave-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +282,29 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Calendly dark theme override */
+.calendly-inline-widget,
+.calendly-inline-widget iframe {
+  background-color: #000000 !important;
+}
+
+.calendly-inline-widget iframe html {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Preserve images and brand colors */
+.calendly-inline-widget iframe img {
+  filter: invert(1) hue-rotate(180deg);
 }
