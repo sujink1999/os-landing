@@ -157,10 +157,11 @@ const Globe = () => {
         <p className=" font-morigothic font-light text-sm md:text-base text-center text-white/70 mt-[5%] ">
           We’re here to change that. To make high performance living a culture.
         </p>
-        <p className=" font-tussilago font-bold gradient-vertical text-xl md:text-4xl text-center mt-[10%]  ">
-          IN PURSUIT OF{" "}
-          <span className="primary-gradient-vertical">HIGHER </span> HUMAN
-          POTENTIAL
+        <p className=" font-tussilago font-bold text-xl md:text-4xl text-center mt-[10%]  ">
+          <span className="gradient-vertical">IN PURSUIT OF</span>{" "}
+          <span className="primary-gradient-vertical">HIGHER </span>{" "}
+          <span className="gradient-vertical">HUMAN </span>{" "}
+          <span className="gradient-vertical">POTENTIAL</span>
         </p>
       </div>
     </div>

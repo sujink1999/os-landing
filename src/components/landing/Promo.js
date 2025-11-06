@@ -33,7 +33,7 @@ const Promo = () => {
   return (
     <div
       ref={sectionRef}
-      className=" w-full max-w-[1000px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%]"
+      className=" w-full max-w-[1000px] mx-auto z-10 flex flex-col items-center px-4 mt-[5%]"
     >
       <div className=" w-full flex flex-col md:flex-row gap-4">
         <div
@@ -82,15 +82,27 @@ const Promo = () => {
             transitionDelay: "400ms",
           }}
         >
-          <p className=" font-aoi-compact text-[10px] md:text-xs ">
+          <p className=" font-aoi-compact text-[10px] md:text-xs text-primary ">
             VANTA OS (ALPHA)- 2026
           </p>
 
-          <p className=" font-aoi-compact text-[10px] md:text-xs">
+          <p className=" font-aoi-compact text-[8px] text-white/50 md:text-xs uppercase">
             Vanta OS (Alpha) combines real-time wearable, biomarker, and
             lifestyle data into precise direction - connecting digital insight
             to real-world action.
           </p>
+
+          <div className=" flex flex-row gap-2 mt-4 md:flex-col">
+            <div className="  border-[0.5px] border-white rounded-full px-4 py-[6px] text-[10px]  md:text-[7px] font-aoi flex items-center justify-center ">
+              <p className=" -mb-1">IDENTITY</p>
+            </div>
+            <div className=" border-[0.5px] border-white rounded-full px-4 py-[6px] text-[10px] md:text-[7px] font-aoi flex items-center justify-center ">
+              <p className=" -mb-1">INTUITION</p>
+            </div>
+            <div className=" border-[0.5px] border-white rounded-full px-4 py-[6px] text-[10px] md:text-[7px] font-aoi flex items-center justify-center ">
+              <p className=" -mb-1">INFORMATION</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

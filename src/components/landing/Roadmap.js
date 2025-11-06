@@ -71,6 +71,9 @@ const Roadmap = () => {
       ref={sectionRef}
       className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4"
     >
+      <div className=" border-[0.5px] border-white rounded-full px-8 py-3 text-xs font-aoi flex items-center justify-center self-end mr-8 mb-10">
+        <p className=" -mb-[6px]">OWNING THE NARRATIVE</p>
+      </div>
       {/* Timeline container */}
       <div className="w-full overflow-x-auto md:overflow-visible px-8 scrollbar-hide">
         <div className="min-w-[800px] md:min-w-0 relative py-12">
@@ -174,7 +177,7 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <div className="relative min-h-[200px] w-full max-w-[800px] flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[100px] w-full max-w-[800px] flex items-center justify-center overflow-hidden">
         {milestones.map((milestone, index) => (
           <p
             key={milestone.year}
