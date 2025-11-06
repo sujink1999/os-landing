@@ -90,13 +90,11 @@ const Carousel = () => {
           }}
         >
           <p className="font-morigothic text-lg md:text-xl text-white font-medium ">
-            a connected network powered by the OS <br />
-            creating a flywheel of data, behavior, and culture.
+            a flywheel of data, behavior, and culture.
           </p>
           <p className="font-morigothic font-light text-sm md:text-base text-white/70">
-            10 Lakh people spending above a 1 Lakh a year on health data,
-            wearables, training, diagnostics & therapies, fuelled nutrition,
-            supplements, athleisure, insurance inside a closed ecosystem
+            10 Lakh people spending above a 1 Lakh a year <br />
+            on a connected network powered by the OS
           </p>
 
           <div className=" flex flex-col gap-4 max-w-[450px] mt-10 ">
@@ -109,13 +107,14 @@ const Carousel = () => {
             </p>
             <div className=" w-1/3 h-px bg-white/20" />
             <p className=" font-aoi text-xs uppercase">
-              India’s health optimization compounding at an average rate of ~35%
-              YoY (wearables, supplements, diagnostics)
+              India’s health optimization compounding at an <br />
+              average rate of ~35% YoY <br />
+              (wearables, supplements, diagnostics)
             </p>
             <div className=" w-1/3 h-px bg-white/20" />
             <p className=" font-aoi text-xs uppercase">
-              1.4 billion people → still using Western-built systems for Eastern
-              bodies
+              1.4 billion people → still using <br />
+              Western-built systems for Eastern bodies
             </p>
           </div>
         </div>

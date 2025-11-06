@@ -67,7 +67,7 @@ const Promo = () => {
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/q025lNfr9aU?rel=0&modestbranding=1&controls=1&showinfo=0&fs=1&iv_load_policy=3"
+              src="https://www.youtube.com/embed/dpvQqmX6SUI?rel=0&modestbranding=1&controls=1&showinfo=0&fs=1&iv_load_policy=3"
               title="YouTube video player"
               style={{ border: 0 }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
