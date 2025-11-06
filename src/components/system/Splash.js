@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import ComplexSystem from "./ComplexSystem";
 import GlowingInput from "./GlowingInput";
 import GlassButton from "./GlassButton";
+import GlowingButton from "./GlowingButton";
 import { useGlobalContext } from "@/context/GlobalContext";
 
 const Splash = () => {
-  const { saveEmail } = useGlobalContext();
+  const { recordEmail } = useGlobalContext();
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     // Step 1: Show "YOUR HEALTH IS COMPLEX" for 2 seconds
@@ -43,11 +45,19 @@ const Splash = () => {
     }
   }, [step]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isValidEmail) {
-      saveEmail(email);
-      console.log("Email submitted and saved:", email);
+    if (isValidEmail && !isSubmitting) {
+      setIsSubmitting(true);
+      const result = await recordEmail(email);
+      if (result.success) {
+        console.log("Email recorded successfully");
+        // Context will handle page transition via hasRecordedEmail state
+      } else {
+        console.error("Failed to record email:", result.error);
+        alert("Failed to submit email. Please try again.");
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -79,7 +89,7 @@ const Splash = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="flex items-center gap-3">
             <GlowingInput
               type="email"
               placeholder="enter email to proceed"
@@ -87,7 +97,22 @@ const Splash = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={handleKeyDown}
+              disabled={isSubmitting}
             />
+            <div
+              className="transition-all duration-300"
+              style={{
+                opacity: isValidEmail ? 1 : 0,
+                transform: isValidEmail ? "scale(1)" : "scale(0.8)",
+                pointerEvents: isValidEmail ? "auto" : "none",
+              }}
+            >
+              <GlowingButton
+                onClick={handleSubmit}
+                disabled={!isValidEmail}
+                isLoading={isSubmitting}
+              />
+            </div>
           </form>
         </div>
       </div>

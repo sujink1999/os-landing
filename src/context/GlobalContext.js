@@ -6,41 +6,54 @@ const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
   // Initialize state from localStorage (only runs once on mount)
-  const [userEmail, setUserEmail] = useState(() => {
+  const [hasRecordedEmail, setHasRecordedEmail] = useState(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("vanta_user_email") || null;
-    }
-    return null;
-  });
-
-  const [hasSubmittedEmail, setHasSubmittedEmail] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !!localStorage.getItem("vanta_user_email");
+      return localStorage.getItem("vanta_email_recorded") === "true";
     }
     return false;
   });
 
-  // Save email to localStorage and update state
-  const saveEmail = (email) => {
-    localStorage.setItem("vanta_user_email", email);
-    setUserEmail(email);
-    setHasSubmittedEmail(true);
+  // Record email via API and update localStorage
+  const recordEmail = async (email) => {
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiUrl}/api/investors`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to record email");
+      }
+
+      const data = await response.json();
+
+      // Only store boolean flag, not the email
+      localStorage.setItem("vanta_email_recorded", "true");
+      setHasRecordedEmail(true);
+
+      return { success: true, data };
+    } catch (error) {
+      console.error("Error recording email:", error);
+      return { success: false, error: error.message };
+    }
   };
 
-  // Clear email from localStorage and state
-  const clearEmail = () => {
-    localStorage.removeItem("vanta_user_email");
-    setUserEmail(null);
-    setHasSubmittedEmail(false);
+  // Clear recorded email status
+  const clearEmailRecord = () => {
+    localStorage.removeItem("vanta_email_recorded");
+    setHasRecordedEmail(false);
   };
 
   return (
     <GlobalContext.Provider
       value={{
-        userEmail,
-        hasSubmittedEmail,
-        saveEmail,
-        clearEmail,
+        hasRecordedEmail,
+        recordEmail,
+        clearEmailRecord,
       }}
     >
       {children}
