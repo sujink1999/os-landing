@@ -44,7 +44,7 @@ const CircularProgress = ({ label, percentage, color = "#10b981" }) => {
             cx="32"
             cy="32"
             r={radius}
-            stroke="#2e2e2e"
+            stroke="#3e3e3e"
             strokeWidth="4"
             fill="none"
           />

@@ -64,7 +64,7 @@ const Hero = () => {
     return (
       <div
         key="mobile"
-        className=" min-h-screen w-full max-w-[1400px] mx-auto relative bg-black flex flex-col items-center "
+        className=" min-h-screen w-full max-w-[1200px] mx-auto relative bg-black flex flex-col items-center "
       >
         <AnimatedBackground />
         <div className=" flex-3 flex flex-col items-center justify-center w-full ">
@@ -141,7 +141,7 @@ const Hero = () => {
   return (
     <div
       key="desktop"
-      className=" min-h-screen w-full max-w-[1400px] mx-auto relative bg-black flex flex-col items-center "
+      className=" min-h-screen w-full max-w-[1200px] mx-auto relative bg-black flex flex-col items-center "
     >
       <AnimatedBackground />
       <div className=" flex-3 flex flex-col items-center justify-center">

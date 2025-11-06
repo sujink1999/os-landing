@@ -47,7 +47,7 @@ const Brain = ({ delay = 0 }) => {
         className=" w-full relative flex-1 border-t border-border flex items-center justify-center h-[120px] animate-scale-fade-in"
         style={{ animationDelay: `${contentDelay}ms` }}
       >
-        <GridLines verticalLines={15} horizontalLines={10} color="#2e2e2e50" />
+        <GridLines verticalLines={15} horizontalLines={10} color="#3e3e3e50" />
         <img
           src="/assets/images/brain.png"
           alt="Brain"

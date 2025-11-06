@@ -87,16 +87,18 @@ const Splash = () => {
           <img
             src="/assets/images/vanta-logo.png"
             alt="Loading"
-            className=" w-[300px]  object-contain animate-pulse"
+            className=" w-[150px]  object-contain opacity-70"
           />
 
           <div className=" flex flex-col gap-3 items-center mb-10">
-            <p className="text-3xl  font-tussilago text-white/90 tracking-wider">
+            <p className="text-3xl font-bold font-tussilago text-white/90 tracking-wider">
               VANTA{" "}
-              <span className=" font-aoi text-white/70 tracking-wider">OS</span>
+              <span className=" font-aoi text-white/70 tracking-wider font-medium">
+                OS
+              </span>
             </p>
-            <p className="text-sm font-aoi text-white/70 tracking-wider">
-              {isValidEmail ? "Press ENTER to submit" : "initialising..."}
+            <p className="text-sm font-aoi text-white/70 tracking-tighter">
+              {isValidEmail ? "Press ENTER to submit" : "initializing..."}
             </p>
           </div>
 
@@ -141,9 +143,13 @@ const Splash = () => {
             opacity: step < 3 ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",
           }}
-          className="md:text-4xl text-2xl text-center font-aoi text-white/90 tracking-wider"
+          className="md:text-2xl text-xl text-center font-aoi text-white/90 tracking-wider"
         >
-          YOUR <span className=" font-tussilago">HEALTH</span> IS COMPLEX
+          YOUR{" "}
+          <span className=" font-tussilago font-bold md:text-3xl text-2xl">
+            HEALTH
+          </span>{" "}
+          IS COMPLEX
         </h1>
       </div>
 
@@ -173,9 +179,12 @@ const Splash = () => {
             style={{
               animationDelay: "500ms",
             }}
-            className="md:text-3xl text-center md:text-left text-2xl font-aoi text-white/90 tracking-wider animate-fade-in duration-2000 opacity-0"
+            className="md:text-2xl text-center md:text-left text-xl font-aoi text-white/90 tracking-wider animate-fade-in duration-2000 opacity-0"
           >
-            YOUR <span className=" font-tussilago">HEALTHCARE</span>{" "}
+            YOUR{" "}
+            <span className=" font-tussilago font-bold md:text-3xl text-2xl">
+              HEALTHCARE
+            </span>{" "}
             DOESN&apos;T HAVE TO BE
           </h1>
         )}

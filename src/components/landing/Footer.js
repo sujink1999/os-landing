@@ -32,7 +32,7 @@ const Footer = () => {
 
   return (
     <div ref={sectionRef} className="w-full bg-black py-20 px-4 mt-[10%]">
-      <div className="w-full max-w-[1400px] mx-auto">
+      <div className="w-full max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Left Side - Bold Statement */}
           <div

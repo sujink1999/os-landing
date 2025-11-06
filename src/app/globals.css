@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "Aoi Mono";
-  src: url("/assets/fonts/Aoi Mono/Aoi Mono - Standard.woff2") format("woff2"),
-    url("/assets/fonts/Aoi Mono/Aoi Mono - Standard.ttf") format("truetype");
+  src: url("/assets/fonts/Aoi Mono/Aoi Mono - Compact.otf") format("opentype"),
+    url("/assets/fonts/Aoi Mono/Aoi Mono - Compact.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -110,7 +110,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-border: #2e2e2e;
+  --color-border: #3e3e3e;
   --font-aoi: var(--font-aoi);
   --font-aoi-compact: var(--font-aoi-compact);
   --font-tussilago: var(--font-tussilago);

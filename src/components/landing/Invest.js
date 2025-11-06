@@ -33,7 +33,7 @@ const Invest = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%]"
+      className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%]"
     >
       <div
         className=" flex items-center gap-4 self-start transition-all duration-700 ease-out"

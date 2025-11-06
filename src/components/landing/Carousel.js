@@ -60,7 +60,7 @@ const Carousel = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4 py-20 my-[10%] gap-12"
+      className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4 py-20 my-[10%] gap-12"
     >
       {/* Title */}
       <h2

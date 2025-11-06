@@ -75,7 +75,7 @@ const Roadmap = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4"
+      className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4"
     >
       {/* Timeline container */}
       <div className="w-full overflow-x-auto md:overflow-visible px-8 scrollbar-hide">

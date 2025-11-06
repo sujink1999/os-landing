@@ -1,3 +1,3 @@
 export const Colors = {
-  border: "#2e2e2e",
+  border: "#3e3e3e",
 };

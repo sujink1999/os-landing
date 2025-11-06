@@ -10,7 +10,7 @@ const BioMarkerTile = ({ label, dataPoints, animationDelay = 0 }) => {
       {/* Graph container */}
       <div className="relative w-[60px] h-[30px] border border-border">
         {/* Grid lines */}
-        <GridLines verticalLines={14} horizontalLines={8} color="#2e2e2e70" />
+        <GridLines verticalLines={14} horizontalLines={8} color="#3e3e3e70" />
 
         {/* Center horizontal line */}
         <div className="absolute left-0 right-0 h-px bg-border top-1/2" />

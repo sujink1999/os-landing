@@ -1,5 +1,6 @@
 import Aging from "./Aging";
 import BioMarkers from "./BioMarkers";
+import BorderAnimation from "./BorderAnimation";
 import Brain from "./Brain";
 import DietProtcol from "./DietProtcol";
 import DoctorNotes from "./DoctorNotes";
@@ -23,29 +24,19 @@ const ComplexSystem = () => {
         className=" absolute top-0 left-0 w-full h-px bg-border animate-line-expand-once"
         style={{ "--target-width": "100%", animationDelay: "200ms" }}
       ></div>
+      <div
+        className=" absolute top-0 left-[40px] max-w-px h-10 bg-border animate-line-expand-once"
+        style={{ "--target-width": "100%", animationDelay: "200ms" }}
+      ></div>
 
-      <div className=" absolute top-0 left-10 right-10 bottom-0 overflow-hidden">
-        <svg
-          className="absolute inset-0 pointer-events-none"
+      <div className=" absolute top-0 left-10 right-10 bottom-0 overflow-hidden ">
+        <BorderAnimation
           width="100%"
           height="100%"
-        >
-          <rect
-            x="0"
-            y="0"
-            width="100%"
-            height="100%"
-            fill="none"
-            stroke="#2e2e2e"
-            strokeWidth="1"
-            strokeDasharray="4000"
-            strokeDashoffset="4000"
-            style={{
-              animation: "border-draw-svg 0.8s ease-out forwards",
-              animationDelay: "400ms",
-            }}
-          />
-        </svg>
+          delay={400}
+          strokeWidth={2}
+        />
+
         {/* Group 1: Center - HumanModel */}
         <HumanModel delay={600} />
 

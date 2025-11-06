@@ -51,7 +51,7 @@ const HumanModel = ({ delay = 0 }) => {
         className=" w-full h-full relative flex items-center justify-center animate-scale-fade-in"
         style={{ animationDelay: `${contentDelay}ms` }}
       >
-        <GridLines verticalLines={20} horizontalLines={30} color="#2e2e2e50" />
+        <GridLines verticalLines={20} horizontalLines={30} color="#3e3e3e50" />
         <img
           src="/assets/images/human-model.png"
           alt="Human Model"

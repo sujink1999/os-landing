@@ -56,7 +56,7 @@ const Aging = ({ delay = 0 }) => {
         <div className="relative w-full h-10 bg-black/30 border border-border">
           {/* Tick marks */}
 
-          <GridLines verticalLines={30} horizontalLines={0} color="#2e2e2e50" />
+          <GridLines verticalLines={30} horizontalLines={0} color="#3e3e3e50" />
           <div className="absolute inset-0 flex justify-between px-2 py-2">
             {[0, 0.5, 1, 1.5].map((tick) => (
               <div key={tick} className="flex flex-col items-center">

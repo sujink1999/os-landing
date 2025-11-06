@@ -1,6 +1,6 @@
 import { Colors } from "@/lib/colors";
 
-const BorderAnimation = ({ width, height, delay = 0 }) => {
+const BorderAnimation = ({ width, height, delay = 0, strokeWidth = 1 }) => {
   return (
     <svg
       className="absolute inset-0 pointer-events-none"
@@ -15,7 +15,7 @@ const BorderAnimation = ({ width, height, delay = 0 }) => {
         height={height}
         fill="none"
         stroke={Colors.border}
-        strokeWidth="1"
+        strokeWidth={strokeWidth}
         strokeDasharray={2 * (width + height)}
         strokeDashoffset={2 * (width + height)}
         className="animate-border-draw-svg"

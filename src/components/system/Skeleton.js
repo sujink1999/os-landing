@@ -11,7 +11,7 @@ const Skeleton = ({ delay = 0 }) => {
         className=" w-full h-[85%] relative p-1 animate-scale-fade-in"
         style={{ animationDelay: `${contentDelay}ms` }}
       >
-        <GridLines verticalLines={20} horizontalLines={20} color="#2e2e2e60" />
+        <GridLines verticalLines={20} horizontalLines={20} color="#3e3e3e60" />
         <img
           src="/assets/images/skeleton.png"
           alt="Skeleton"

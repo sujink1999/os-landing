@@ -35,7 +35,7 @@ const OutliveOrdinary = () => {
       ref={sectionRef}
       className="  w-full   flex flex-col items-center overflow-hidden "
     >
-      <div className=" w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4">
+      <div className=" w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4">
         <div
           className=" flex flex-col sm:flex-row items-start sm:items-center gap-4 pb-[10%] self-start transition-all duration-700 ease-out"
           style={{
@@ -72,7 +72,7 @@ const OutliveOrdinary = () => {
         }}
       />
 
-      <div className=" w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4  relative  mt-[10%] ">
+      <div className=" w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4  relative  mt-[10%] ">
         <img
           src="/assets/images/vanta-logo.png"
           alt="Vanta"

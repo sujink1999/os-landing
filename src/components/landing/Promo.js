@@ -33,7 +33,7 @@ const Promo = () => {
   return (
     <div
       ref={sectionRef}
-      className=" w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%]"
+      className=" w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%]"
     >
       <div className=" w-full flex flex-col md:flex-row gap-4">
         <div

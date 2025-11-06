@@ -54,30 +54,10 @@ const Globe = () => {
     };
   }, []);
 
-  // Define marker points
-  const markerData = [
-    { lat: 20.5937, lng: 78.9629, size: 0.5, color: "#ffffff", label: "India" },
-    { lat: 37.0902, lng: -95.7129, size: 0.5, color: "#ffffff", label: "USA" },
-    {
-      lat: 51.5074,
-      lng: -0.1278,
-      size: 0.5,
-      color: "#ffffff",
-      label: "London",
-    },
-    {
-      lat: 35.6762,
-      lng: 139.6503,
-      size: 0.5,
-      color: "#ffffff",
-      label: "Tokyo",
-    },
-  ];
-
   useEffect(() => {
     if (globeEl) {
-      // Set initial camera position
-      globeEl.pointOfView({ lat: 0, lng: 0, altitude: 2 });
+      // Set initial camera position to India (lat: 20, lng: 78)
+      globeEl.pointOfView({ lat: 20, lng: 78, altitude: 2 });
 
       // Enable auto-rotation
       globeEl.controls().autoRotate = true;
@@ -91,7 +71,7 @@ const Globe = () => {
   return (
     <div
       ref={sectionRef}
-      className=" w-full max-w-[1400px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%] gap-12 overflow-hidden"
+      className=" w-full max-w-[1300px] mx-auto z-10 flex flex-col items-center px-4 mt-[10%] gap-12 overflow-hidden"
     >
       <div className=" gap-10 md:gap-6 flex-col md:flex-row flex items-center">
         <p
@@ -101,9 +81,8 @@ const Globe = () => {
             transform: isVisible ? "translateX(0)" : "translateX(-30px)",
           }}
         >
-          Vanta was born out of sheer dissatisfaction. After spending lakhs of
-          money and hours of chase - a frustration with healthcare that never
-          met people where they are.
+          Born from sheer dissatisfaction - with healthcare that never met you
+          halfway.
         </p>
 
         <p
@@ -132,9 +111,8 @@ const Globe = () => {
             transitionDelay: "400ms",
           }}
         >
-          Healthcare is boring, extremely fragmented and siloed. With systemic
-          and systematic issues at every level, healthcare today isn&apos;t
-          engineered for peak health.
+          Healthcare is boring, fragmented, siloed - never built for peak
+          performance.
         </p>
       </div>
 
@@ -157,7 +135,6 @@ const Globe = () => {
           width={isMobile ? 250 : 600}
           height={isMobile ? 250 : 600}
           animateIn={true}
-          pointsData={markerData}
           pointAltitude={0.01}
           pointRadius={0.5}
           pointColor="color"

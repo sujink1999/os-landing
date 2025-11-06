@@ -22,9 +22,9 @@ const HeartRateChart = ({ animationDelay = 0 }) => {
   return (
     <div className="flex flex-col gap-2 flex-1">
       <div className="relative w-full h-15 bg-black/20 ">
-        {/* <GridLines verticalLines={15} horizontalLines={6} color="#2e2e2e50" /> */}
+        {/* <GridLines verticalLines={15} horizontalLines={6} color="#3e3e3e50" /> */}
 
-        {/* <GridLines verticalLines={15} horizontalLines={6} color="#2e2e2e" /> */}
+        {/* <GridLines verticalLines={15} horizontalLines={6} color="#3e3e3e" /> */}
 
         <svg
           className="absolute inset-0 w-full h-full"

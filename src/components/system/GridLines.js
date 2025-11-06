@@ -1,7 +1,7 @@
 export default function GridLines({
   verticalLines = 10,
   horizontalLines = 10,
-  color = "#2e2e2e",
+  color = "#3e3e3e",
 }) {
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none">
