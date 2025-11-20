@@ -1,12 +1,25 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const mainTextRef = useRef(null);
+  const descTextRef = useRef(null);
+  const bullet1Ref = useRef(null);
+  const divider1Ref = useRef(null);
+  const bullet2Ref = useRef(null);
+  const divider2Ref = useRef(null);
+  const bullet3Ref = useRef(null);
+  const divider3Ref = useRef(null);
+  const bullet4Ref = useRef(null);
+  const carouselRef = useRef(null);
 
   // Placeholder card data - user will update with actual images
   const cards = [
@@ -17,27 +30,127 @@ const Carousel = () => {
     { id: 5, image: "/assets/images/carousel-card.png", alt: "Card 5" },
   ];
 
-  // Intersection Observer
+  // GSAP ScrollTrigger animations
   useEffect(() => {
-    const currentSection = sectionRef.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    const section = sectionRef.current;
+    const mainText = mainTextRef.current;
+    const descText = descTextRef.current;
+    const bullet1 = bullet1Ref.current;
+    const divider1 = divider1Ref.current;
+    const bullet2 = bullet2Ref.current;
+    const divider2 = divider2Ref.current;
+    const bullet3 = bullet3Ref.current;
+    const divider3 = divider3Ref.current;
+    const bullet4 = bullet4Ref.current;
+    const carousel = carouselRef.current;
 
-    if (currentSection) {
-      observer.observe(currentSection);
+    if (!section) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top center",
+        end: "center center",
+        scrub: 1,
+      },
+    });
+
+    const scrollTriggerInstance = tl.scrollTrigger;
+
+    // Animate each text element one by one
+    if (mainText) {
+      tl.fromTo(
+        mainText,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.1 }
+      );
+    }
+
+    if (descText) {
+      tl.fromTo(
+        descText,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.1 },
+        "-=0.05"
+      );
+    }
+
+    if (bullet1) {
+      tl.fromTo(
+        bullet1,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.1 },
+        "-=0.05"
+      );
+    }
+
+    if (divider1) {
+      tl.fromTo(
+        divider1,
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.08 },
+        "-=0.05"
+      );
+    }
+
+    if (bullet2) {
+      tl.fromTo(
+        bullet2,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.1 },
+        "-=0.05"
+      );
+    }
+
+    if (divider2) {
+      tl.fromTo(
+        divider2,
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.08 },
+        "-=0.05"
+      );
+    }
+
+    if (bullet3) {
+      tl.fromTo(
+        bullet3,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.1 },
+        "-=0.05"
+      );
+    }
+
+    if (divider3) {
+      tl.fromTo(
+        divider3,
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.08 },
+        "-=0.05"
+      );
+    }
+
+    if (bullet4) {
+      tl.fromTo(
+        bullet4,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.1 },
+        "-=0.05"
+      );
+    }
+
+    // Animate carousel
+    if (carousel) {
+      tl.fromTo(
+        carousel,
+        { opacity: 0, x: 30 },
+        { opacity: 1, x: 0, duration: 0.15 },
+        "-=0.1"
+      );
     }
 
     return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
+      if (scrollTriggerInstance) {
+        scrollTriggerInstance.kill();
       }
     };
   }, []);
@@ -60,59 +173,63 @@ const Carousel = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full max-w-[1100px] mx-auto z-10 flex flex-col items-center px-4 py-20 mb-[5%] mt-[10%] gap-12"
+      className="w-full max-w-[1100px] mx-auto z-10 flex flex-col items-center px-4 py-20 mb-[5%]  gap-12"
     >
-      {/* Title */}
-      <h2
-        className="font-tussilago font-bold text-2xl md:text-4xl text-center mb-10 transition-all duration-700 ease-out "
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? "translateY(0)" : "translateY(-20px)",
-        }}
-      >
-        <span className="gradient-vertical">MISSION</span>{" "}
-        <span className="gradient-vertical">2030 :</span>{" "}
-        <span className="gradient-vertical whitespace-nowrap primary-gradient-vertical">
-          1 MILLION
-        </span>{" "}
-        <span className="gradient-vertical">USERS</span>
-      </h2>
-
       {/* Content container */}
       <div className="w-full flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center">
         {/* Left text content */}
-        <div
-          className="flex-1 flex flex-col gap-4 z-10 transition-all duration-700 ease-out"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateX(0)" : "translateX(-30px)",
-            transitionDelay: "200ms",
-          }}
-        >
-          <p className="font-morigothic text-lg md:text-xl text-white font-medium ">
+        <div className="flex-1 flex flex-col gap-4 z-10">
+          <p
+            ref={mainTextRef}
+            className="font-helvetica text-lg md:text-xl text-white font-medium opacity-0"
+          >
             a flywheel of data, behavior, and culture.
           </p>
-          <p className="font-morigothic font-light text-sm md:text-base text-white/70">
+          <p
+            ref={descTextRef}
+            className="font-helvetica font-light text-sm md:text-base text-white/70 opacity-0"
+          >
             10 Lakh people spending above a 1 Lakh a year <br />
             on a connected network powered by the OS
           </p>
 
-          <div className=" flex flex-col gap-4 max-w-[450px] mt-10 ">
-            <p className=" font-aoi text-xs uppercase">
+          <div className="flex flex-col gap-4 max-w-[450px] mt-10">
+            <p
+              ref={bullet1Ref}
+              className="font-aoi text-xs uppercase opacity-0"
+            >
               Preventive-health market in India → 4× by 2030
             </p>
-            <div className=" w-1/3 h-px bg-white/20" />
-            <p className=" font-aoi text-xs uppercase">
+            <div
+              ref={divider1Ref}
+              className="w-1/3 h-px bg-white/20 opacity-0 origin-left"
+            />
+            <p
+              ref={bullet2Ref}
+              className="font-aoi text-xs uppercase opacity-0"
+            >
               Cultural shift → Illness → Performance
             </p>
-            <div className=" w-1/3 h-px bg-white/20" />
-            <p className=" font-aoi text-xs uppercase">
-              India’s health optimization compounding at an <br />
+            <div
+              ref={divider2Ref}
+              className="w-1/3 h-px bg-white/20 opacity-0 origin-left"
+            />
+            <p
+              ref={bullet3Ref}
+              className="font-aoi text-xs uppercase opacity-0"
+            >
+              India&apos;s health optimization compounding at an <br />
               average rate of ~35% YoY <br />
               (wearables, supplements, diagnostics)
             </p>
-            <div className=" w-1/3 h-px bg-white/20" />
-            <p className=" font-aoi text-xs uppercase">
+            <div
+              ref={divider3Ref}
+              className="w-1/3 h-px bg-white/20 opacity-0 origin-left"
+            />
+            <p
+              ref={bullet4Ref}
+              className="font-aoi text-xs uppercase opacity-0"
+            >
               1.4 billion people → still using <br />
               Western-built systems for Eastern bodies
             </p>
@@ -121,7 +238,8 @@ const Carousel = () => {
 
         {/* Right carousel */}
         <div
-          className="flex-1 w-full"
+          ref={carouselRef}
+          className="flex-1 w-full opacity-0"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

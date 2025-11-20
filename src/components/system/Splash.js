@@ -146,7 +146,7 @@ const Splash = () => {
           className="md:text-2xl text-xl text-center font-aoi text-white/90 tracking-wider"
         >
           YOUR{" "}
-          <span className=" font-tussilago font-bold md:text-3xl text-2xl">
+          <span className="animated-gradient-shimmer font-tussilago font-bold md:text-3xl text-2xl">
             HEALTH
           </span>{" "}
           IS COMPLEX
@@ -182,7 +182,7 @@ const Splash = () => {
             className="md:text-2xl text-center md:text-left text-xl font-aoi text-white/90 tracking-wider animate-fade-in duration-2000 opacity-0"
           >
             YOUR{" "}
-            <span className=" font-tussilago font-bold md:text-3xl text-2xl">
+            <span className="animated-gradient-shimmer font-tussilago font-bold md:text-3xl text-2xl">
               HEALTHCARE
             </span>{" "}
             DOESN&apos;T HAVE TO BE
