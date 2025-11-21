@@ -133,6 +133,10 @@ const Globe = () => {
 
       // Disable zoom
       globeEl.controls().enableZoom = false;
+
+      // Disable vertical rotation (lock polar angle)
+      globeEl.controls().minPolarAngle = Math.PI / 2;
+      globeEl.controls().maxPolarAngle = Math.PI / 2;
     }
   }, [globeEl]);
 
@@ -174,7 +178,7 @@ const Globe = () => {
         {/* Interactive 3D Globe */}
         <div
           ref={globeContainerRef}
-          className="w-full max-w-[250px] md:max-w-[400px] h-[250px] md:h-[400px] overflow-hidden opacity-0"
+          className="w-full my-20 max-w-[250px] md:max-w-[400px] h-[250px] md:h-[400px] overflow-hidden opacity-0"
         >
           <GlobeGL
             ref={setGlobeEl}

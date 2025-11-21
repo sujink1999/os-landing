@@ -68,39 +68,39 @@ const OutliveOrdinary = () => {
       ref={sectionRef}
       className="mt-20 w-full h-[50vh] flex flex-col justify-between items-center overflow-hidden relative"
     >
-        {/* Top section with cult text */}
-        <div className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4 pt-8">
-          <div
-            ref={cultTextRef}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 self-start opacity-0"
-          >
-            <p className="font-helvetica font-light text-sm text-white/70">
-              what needs <br />
-              to be built?
-            </p>
-            <p className="font-aoi text-base">A CULT OF SHARED BELIEF</p>
-          </div>
-        </div>
-
-        {/* Horizon and overlapping text container at bottom */}
-        <div className="w-full relative">
-          {/* OUTLIVE ORDINARY text - positioned to touch horizon */}
-          <p
-            ref={outliveTextRef}
-            className="font-tussilago font-bold text-2xl sm:text-4xl md:text-5xl text-center absolute left-0 right-0 z-0 opacity-0 -top-2 sm:-top-4 md:-top-4 lg:top-2"
-          >
-            OUTLIVE ORDINARY
+      {/* Top section with cult text */}
+      <div className="w-full max-w-[1200px] mx-auto z-10 flex flex-col items-center px-4 pt-8">
+        <div
+          ref={cultTextRef}
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 self-start opacity-0"
+        >
+          <p className="font-helvetica  text-sm text-white/70">
+            what needs <br />
+            to be built?
           </p>
-
-          {/* Planet horizon image */}
-          <img
-            ref={horizonRef}
-            src="/assets/images/horizon.png"
-            alt="Planet Horizon"
-            className="w-full h-auto object-cover relative z-10 opacity-0"
-          />
+          <p className="font-aoi text-base">A CULT OF SHARED BELIEF</p>
         </div>
       </div>
+
+      {/* Horizon and overlapping text container at bottom */}
+      <div className="w-full relative">
+        {/* OUTLIVE ORDINARY text - positioned to touch horizon */}
+        <p
+          ref={outliveTextRef}
+          className="font-tussilago font-bold text-2xl sm:text-4xl md:text-5xl text-center absolute left-0 right-0 z-0 opacity-0 -top-2 sm:-top-4 md:-top-4 lg:top-2"
+        >
+          OUTLIVE ORDINARY
+        </p>
+
+        {/* Planet horizon image */}
+        <img
+          ref={horizonRef}
+          src="/assets/images/horizon.png"
+          alt="Planet Horizon"
+          className="w-full h-auto object-cover relative z-10 opacity-0"
+        />
+      </div>
+    </div>
   );
 };
 

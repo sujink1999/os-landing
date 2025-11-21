@@ -147,7 +147,7 @@ const Invest = () => {
           </p>
           <p
             ref={leftTextRef}
-            className="hidden md:block font-helvetica font-light text-base text-white/60 text-right self-start opacity-0"
+            className="hidden md:block font-helvetica font-medium text-base text-white/60 text-right self-start opacity-0"
           >
             To help us engineer the future <br />
             of health infrastructure
@@ -158,7 +158,7 @@ const Invest = () => {
           />
           <p
             ref={rightTextRef}
-            className="hidden md:block font-helvetica font-light text-base text-white/60 text-left self-center opacity-0"
+            className="hidden md:block font-helvetica font-medium text-base text-white/60 text-left self-center opacity-0"
           >
             to build proof, ignite culture,
             <br /> and scale the ecosystem.
@@ -175,7 +175,7 @@ const Invest = () => {
           </p>
           <p
             ref={descTextRef}
-            className="font-helvetica font-light text-base text-white/50 text-center opacity-0"
+            className="font-helvetica font-medium text-base text-white/50 text-center opacity-0"
           >
             from the right strategic investors — builders, believers, and
             operators who see what's coming.

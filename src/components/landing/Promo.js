@@ -190,7 +190,7 @@ const Promo = () => {
               ref={leftImgRef}
               src="/assets/images/enhanced.png"
               alt="Promo Image"
-              className="w-10 h-10 object-contain opacity-0"
+              className="w-6 h-6 object-contain opacity-0"
             />
             <p
               ref={leftText2Ref}
